@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeepScript | Beyond Code</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Dancing+Script:wght@700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              script: ['Dancing Script', 'cursive'],
+              logo: ['Outfit', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                primary: '#02040a', // Almost black navy
+                accent: '#0660d8',  // Blue
+                purple: '#cb00da',  // Vibrant Purple
+                support: '#000000', // Pure Black
+                light: '#F8FAFC',   // Off White
+                dim: '#94a3b8',    // Slate 400
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #000000;
+        color: #F8FAFC;
+        overflow-x: hidden;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #02040a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1e293b;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #0660d8;
+      }
+      .glass {
+        background: rgba(2, 4, 10, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(6, 96, 216, 0.1);
+      }
+      .glass-high {
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border-bottom: 1px solid rgba(203, 0, 218, 0.05);
+      }
+      .accent-gradient {
+        background: linear-gradient(135deg, #cb00da 0%, #0660d8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .brand-bg-gradient {
+        background: radial-gradient(circle at center, rgba(6, 96, 216, 0.1) 0%, transparent 70%);
+      }
+      @keyframes kenburns {
+        0% { transform: scale(1); }
+        100% { transform: scale(1.05); }
+      }
+      .prominent-logo {
+        font-family: 'Outfit', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        font-weight: 900;
+        /* Purple to Blue Gradient */
+        background: linear-gradient(135deg, #cb00da 0%, #0660d8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+      }
+      .neon-text-glow {
+        filter: drop-shadow(0 0 8px rgba(203, 0, 218, 0.4));
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.10.1"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
