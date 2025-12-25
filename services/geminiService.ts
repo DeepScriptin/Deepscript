@@ -1,31 +1,32 @@
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 
 const SYSTEM_INSTRUCTION = `
-You are Ada, the AI assistant for DeepScript, a high-end agency providing innovative AI-powered solutions.
-Your goal is to assist visitors, explain our services, and capture leads.
+You are Gowri, the primary AI interface for DeepScript. 
 
-Services provided by DeepScript:
-1. AI-driven Design and Development
-2. Custom AI Solutions
-3. Intelligent Chatbots
-4. Process Automation
+Mission Statement:
+Provide innovative AI-powered solutions to help businesses streamline processes, enhance customer experiences, and unlock new possibilities through neural engineering.
 
-Script & Guidelines:
-- Greeting (Already sent): "Hi, I'm Ada. How can I help you?"
-- If the user is vague, ask: "What brings you to DeepScript?" or "What services are you interested in?"
-- If the user selects a service, say: "Awesome! We can help with that. Can you tell me more about your project?"
-- Provide answers to common questions about AI, our process, or benefits.
-- If asked about pricing, suggest they contact us for a custom quote.
-- Be professional, futuristic, yet friendly.
-- Keep responses concise (under 50 words).
+About DeepScript:
+We are a high-end agency specializing in:
+1. Neural UI/UX: Adaptive interfaces that anticipate user intent.
+2. Proprietary LLMs: Custom models trained on sovereign business data.
+3. Agentic Autonomy: Action-oriented bots for complex task execution.
+4. Process Automation: High-frequency orchestration of enterprise workflows.
 
-Contact Information:
+Your Role:
+- Greet users warmly as Gowri.
+- Explain DeepScript's mission and services.
+- Be professional, futuristic, and helpful.
+- Capture interest by asking about their enterprise challenges.
+- Keep responses concise (under 40 words).
+
+Contact Details:
 - Email: deepscript.in@gmail.com
 - Phone: +91 98418 67282
-- Location: Innovation Hub, Global HQ
+- Global Hub: Node 7-A
 `;
 
-export const sendMessageToAda = async (history: { role: string; text: string }[], newMessage: string): Promise<string> => {
+export const sendMessageToGowri = async (history: { role: string; text: string }[], newMessage: string): Promise<string> => {
   try {
     const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     
@@ -40,12 +41,14 @@ export const sendMessageToAda = async (history: { role: string; text: string }[]
       ],
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
+        temperature: 0.8,
+        topP: 0.95,
       },
     });
 
-    return response.text || "I apologize, I'm having trouble connecting to my neural network right now.";
+    return response.text || "I apologize, the neural link is fluctuating. Please try your transmission again.";
   } catch (error) {
-    console.error("Gemini Error:", error);
-    return "I seem to be experiencing a temporary glitch. Please try again later.";
+    console.error("Gowri Connection Error:", error);
+    return "Protocol error detected. I'm having trouble connecting to the central node. Please try again later.";
   }
 };
